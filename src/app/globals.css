@@ -1,0 +1,110 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --background: #FBF9F5;
+    --foreground: #101211;
+    --bg-cream: #FBF9F5;
+    --bg-sand: #F4EFE6;
+    --bg-dark: #0E100E;
+    --bg-dark-surface: #171A18;
+    --text-primary: #151715;
+    --text-muted: #59564F;
+    --accent-gold: #C29B38;
+    --accent-gold-light: #DFCA9B;
+    --border-stone: #E5DFD4;
+    --emerald-deep: #1A2821;
+  }
+
+  html {
+    scroll-behavior: smooth;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  body {
+    background-color: var(--bg-cream);
+    color: var(--text-primary);
+    overflow-x: hidden;
+    font-feature-settings: "cv02", "cv03", "cv04", "cv11";
+  }
+
+  ::selection {
+    background: #C29B38;
+    color: #FBF9F5;
+  }
+}
+
+/* Custom Typography Utilities */
+.font-display {
+  font-family: var(--font-display, Georgia, serif);
+}
+
+.font-body {
+  font-family: var(--font-body, system-ui, -apple-system, sans-serif);
+}
+
+/* Micro-animations and effects */
+@keyframes pulseSubtle {
+  0%, 100% { opacity: 0.9; transform: scale(1); }
+  50% { opacity: 0.5; transform: scale(0.98); }
+}
+
+@keyframes floatSlow {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-6px); }
+}
+
+.animate-pulse-subtle {
+  animation: pulseSubtle 3s ease-in-out infinite;
+}
+
+.animate-float {
+  animation: floatSlow 5s ease-in-out infinite;
+}
+
+/* Glassmorphism Backdrop */
+.glass-nav {
+  background: rgba(251, 249, 245, 0.92);
+  backdrop-filter: blur(12px) saturate(160%);
+  -webkit-backdrop-filter: blur(12px) saturate(160%);
+}
+
+.glass-dark {
+  background: rgba(14, 16, 14, 0.88);
+  backdrop-filter: blur(16px) saturate(180%);
+  -webkit-backdrop-filter: blur(16px) saturate(180%);
+}
+
+/* Custom scrollbar for subtle aesthetic */
+::-webkit-scrollbar {
+  width: 7px;
+  height: 7px;
+}
+
+::-webkit-scrollbar-track {
+  background: #F4EFE6;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #C29B38;
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #A88328;
+}
+
+/* Kirkby Studio Style Giant Wordmark */
+.giant-wordmark {
+  font-family: var(--font-display, Georgia, serif);
+  font-size: clamp(3rem, 11vw, 13rem);
+  line-height: 0.85;
+  letter-spacing: -0.04em;
+  font-weight: 400;
+  text-transform: uppercase;
+  color: rgba(251, 249, 245, 0.08);
+  user-select: none;
+  pointer-events: none;
+  white-space: nowrap;
+}

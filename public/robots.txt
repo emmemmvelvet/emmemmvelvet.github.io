@@ -1,0 +1,23 @@
+# Emm Emm Velvet — Robots.txt
+# Optimized for Googlebot, Google Search Console & Image Indexing
+
+User-agent: *
+Allow: /
+Disallow: /api/
+Disallow: /demo-preloader/
+Disallow: /_next/
+
+User-agent: Googlebot
+Allow: /
+Disallow: /api/
+Disallow: /demo-preloader/
+
+User-agent: Googlebot-Image
+Allow: /images/
+Allow: /*.png$
+Allow: /*.jpg$
+Allow: /*.webp$
+Allow: /*.svg$
+
+Sitemap: https://emmemmvelvet.com/sitemap.xml
+Host: https://emmemmvelvet.com
